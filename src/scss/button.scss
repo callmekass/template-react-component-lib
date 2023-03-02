@@ -23,12 +23,6 @@
 }
 
 /* styling for variants */
-$colors: (
-  primary: #007bff,
-  secondary: #6c757d,
-  danger: #dc3545,
-);
-
 @mixin variant-color-modifiers($attribute: 'color') {
   @each $name, $hex in $colors {
     &-#{$name} {
