@@ -27,3 +27,10 @@ PrimaryBold.args = {
   variant: 'primary',
   fontWeight: 'bold',
 };
+
+export const Pill = Template.bind({});
+Pill.args = {
+  children: 'Pill',
+  variant: 'primary',
+  pill: true,
+};

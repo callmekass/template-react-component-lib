@@ -1,0 +1,58 @@
+/* base styling for our button */
+$primary: #007bff;
+$secondary: #6c757d;
+$danger: #dc3545;
+
+$primary-opaque: rgba($primary, 30%);
+$danger-opaque: rgba($danger, 30%);
+$secondary-opaque: rgba($secondary, 30%);
+
+.btn {
+  padding: 6px 12px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  text-align: center;
+  vertical-align: center;
+  line-height: 1.42857143;
+}
+
+.btn:hover {
+  filter: brightness(1.1);
+}
+
+/* styling for our variants */
+.btn-primary {
+  background-color: $primary;
+}
+
+.btn-primary:active {
+  box-shadow: 0px 0px 0px 5px $primary-opaque;
+}
+
+.btn-danger {
+  background-color: $danger;
+}
+
+.btn-danger:active {
+  box-shadow: 0px 0px 0px 5px $danger-opaque;
+}
+
+.btn-secondary {
+  background-color: $secondary;
+}
+
+.btn-secondary:active {
+  box-shadow: 0px 0px 0px 5px $secondary-opaque;
+}
+
+/* styling for different shape*/
+.btn-bold {
+  font-weight: bold;
+}
+
+.pill {
+  border-radius: 23px;
+}
