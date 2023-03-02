@@ -1,12 +1,3 @@
-/* base styling for our button */
-$primary: #007bff;
-$secondary: #6c757d;
-$danger: #dc3545;
-
-$primary-opaque: rgba($primary, 30%);
-$danger-opaque: rgba($danger, 30%);
-$secondary-opaque: rgba($secondary, 30%);
-
 .btn {
   padding: 6px 12px;
   border: 1px solid transparent;
@@ -23,36 +14,63 @@ $secondary-opaque: rgba($secondary, 30%);
   filter: brightness(1.1);
 }
 
-/* styling for our variants */
-.btn-primary {
-  background-color: $primary;
+.btn-pill {
+  border-radius: 23px;
 }
 
-.btn-primary:active {
-  box-shadow: 0px 0px 0px 5px $primary-opaque;
-}
-
-.btn-danger {
-  background-color: $danger;
-}
-
-.btn-danger:active {
-  box-shadow: 0px 0px 0px 5px $danger-opaque;
-}
-
-.btn-secondary {
-  background-color: $secondary;
-}
-
-.btn-secondary:active {
-  box-shadow: 0px 0px 0px 5px $secondary-opaque;
-}
-
-/* styling for different shape*/
 .btn-bold {
   font-weight: bold;
 }
 
-.btn-pill {
-  border-radius: 23px;
+/* styling for variants */
+$colors: (
+  primary: #007bff,
+  secondary: #6c757d,
+  danger: #dc3545,
+);
+
+@mixin variant-color-modifiers($attribute: 'color') {
+  @each $name, $hex in $colors {
+    &-#{$name} {
+      #{$attribute}: $hex;
+    }
+  }
+  @each $name, $hex in $colors {
+    &-#{$name}:active {
+      box-shadow: 0px 0px 0px 5px rgba($hex, 30%);
+    }
+  }
+}
+
+@mixin outline-color-modifiers() {
+  @each $name, $hex in $colors {
+    &-#{$name} {
+      border: 1px solid $hex;
+      color: $hex;
+      background-color: transparent;
+    }
+  }
+  @each $name, $hex in $colors {
+    &-#{$name}:active {
+      box-shadow: 0px 0px 0px 5px rgba($hex, 30%);
+    }
+  }
+}
+
+@mixin outline-hover-modifiers() {
+  @each $name, $hex in $colors {
+    &-#{$name} {
+      border: 1px solid $hex;
+      color: $hex;
+      background-color: transparent;
+    }
+  }
+}
+
+.btn {
+  @include variant-color-modifiers(background-color);
+}
+
+.btn-outline {
+  @include outline-color-modifiers();
 }
