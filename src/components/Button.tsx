@@ -16,7 +16,7 @@ export const Button: React.FC<ButtonProps> = ({
 }) => {
   const classNames = `btn btn-${variant}${
     fontWeight ? ` btn-${fontWeight}` : ''
-  }${pill ? ' pill' : ''}`;
+  }${pill ? ' btn-pill' : ''}`;
   //`btn btn-${variant} btn-${fontWeight}${
   //  pill ? ' pill' : ''
   //}`;

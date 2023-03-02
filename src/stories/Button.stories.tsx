@@ -1,4 +1,4 @@
-import React, { Children } from 'react';
+import React from 'react';
 import { Story } from '@storybook/react';
 import { Button, ButtonProps } from '../components/Button';
 
