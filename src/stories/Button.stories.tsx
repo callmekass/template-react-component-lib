@@ -25,7 +25,7 @@ export const PrimaryBold = Template.bind({});
 PrimaryBold.args = {
   children: 'Bold',
   variant: 'primary',
-  fontWeight: 'bold',
+  fontBold: true,
 };
 
 export const Pill = Template.bind({});
